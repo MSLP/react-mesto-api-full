@@ -2,7 +2,6 @@
 class Api {
   constructor(options) {
     this.baseUrl = options.baseUrl;
-    this.headers = options.headers;
   }
 
   // проверка ответа от сервера
@@ -19,7 +18,10 @@ class Api {
   getInitialCards() {
     return fetch(`${this.baseUrl}/cards`, {
       method: 'GET',
-      headers: this.headers
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
     })
     .then(this._checkResponse);
   }
@@ -28,7 +30,10 @@ class Api {
   addCard(card) {
     return fetch(`${this.baseUrl}/cards`, {
       method: 'POST',
-      headers: this.headers,
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      },
       body: JSON.stringify(card)
     })
     .then(this._checkResponse);
@@ -38,7 +43,10 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
-      headers: this.headers,
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
     })
     .then(this._checkResponse);
   }
@@ -47,7 +55,10 @@ class Api {
   getUserInfo() {
     return fetch(`${this.baseUrl}/users/me`, {
       method: 'GET',
-      headers: this.headers
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
     })
     .then(this._checkResponse);
   }
@@ -56,7 +67,10 @@ class Api {
   changeUserInfo(newInfo) {
     return fetch(`${this.baseUrl}/users/me`, {
       method: 'PATCH',
-      headers: this.headers,
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      },
       body: JSON.stringify(newInfo)
     })
     .then(this._checkResponse);
@@ -66,7 +80,10 @@ class Api {
   changeAvatar(newLink) {
     return fetch(`${this.baseUrl}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this.headers,
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      },
       body: JSON.stringify(newLink)
     })
     .then(this._checkResponse);
@@ -76,7 +93,10 @@ class Api {
   likeCard(cardId) {
     return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
       method: 'PUT',
-      headers: this.headers
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
     })
     .then(this._checkResponse);
   }
@@ -85,7 +105,10 @@ class Api {
   dislikeCard(cardId) {
     return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
       method: 'DELETE',
-      headers: this.headers
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
     })
     .then(this._checkResponse);
   }
@@ -94,8 +117,4 @@ class Api {
 // создание экземпляра класса отвечающего за работу с сервером
 export default new Api({
   baseUrl: 'https://mesto.mslp.back.nomoredomains.club',
-  headers: {
-    'Content-Type': 'application/json',
-    authorization: `Bearer ${localStorage.getItem('token')}`
-  }
 });
