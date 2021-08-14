@@ -48,7 +48,7 @@ class Auth {
 }
 
 export default new Auth({
-  baseUrl: 'https://auth.nomoreparties.co',
+  baseUrl: 'https://mesto.mslp.back.nomoredomains.club',
   headers: {
     "Content-Type": "application/json"
   }
