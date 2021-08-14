@@ -48,9 +48,18 @@ function App() {
 
   // получение с сервера информации о пользователе и начальных карточках
   React.useEffect(() => {
-    loggedIn && Promise.all([api.getUserInfo(), api.getInitialCards()])
-    .then(([userData, cardsData]) => {
+    loggedIn && api.getUserInfo()
+    .then((userData) => {
         setCurrentUser(userData);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }, [loggedIn]);
+
+  React.useEffect(() => {
+    loggedIn && api.getInitialCards()
+    .then((cardsData) => {
         setCards(cardsData);
     })
     .catch(err => {
