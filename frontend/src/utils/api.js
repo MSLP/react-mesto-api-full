@@ -96,6 +96,6 @@ export default new Api({
   baseUrl: 'https://mesto.mslp.back.nomoredomains.club',
   headers: {
     'Content-Type': 'application/json',
-    authorization: localStorage.getItem('token')
+    authorization: `Bearer ${localStorage.getItem('token')}`
   }
 });
