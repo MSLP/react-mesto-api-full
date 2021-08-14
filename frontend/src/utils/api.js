@@ -93,9 +93,8 @@ class Api {
 
 // создание экземпляра класса отвечающего за работу с сервером
 export default new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-23',
+  baseUrl: 'https://mesto.mslp.back.nomoredomains.club',
   headers: {
-    authorization: 'f6f9ecaf-e6cf-427c-9bec-74dcbb4a47a1',
     'Content-Type': 'application/json'
   }
 });
