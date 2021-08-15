@@ -13,7 +13,7 @@ const cors = require('./middlewares/cors');
 const NotFoundError = require('./errors/not-found-err');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const regExp = /^https?:\/\/(www.)?[a-zA-Z0-9-.]+(\.\w+)+\/[\w-._~:/?#[\]@!$&'()*+,;=]*#*$/;
+const regExp = /^https?:\/\/(www.)?[a-zA-Z0-9-.]+(\.\w+)+[/\w-._~:/?#[\]@!$&'()*+,;=]*#*$/;
 const app = express();
 
 app.use(helmet());

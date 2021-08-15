@@ -5,7 +5,7 @@ const {
   getUsers, getUserById, getUserMe, updateUser, updateAvatar,
 } = require('../controllers/users');
 
-const regExp = /^https?:\/\/(www.)?[a-zA-Z0-9-.]+(\.\w+)+\/[\w-._~:/?#[\]@!$&'()*+,;=]*#*$/;
+const regExp = /^https?:\/\/(www.)?[a-zA-Z0-9-.]+(\.\w+)+[/\w-._~:/?#[\]@!$&'()*+,;=]*#*$/;
 
 router.get('/users', getUsers);
 router.get('/users/me', getUserMe);

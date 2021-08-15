@@ -4,7 +4,7 @@ const {
   getCards, addCard, deleteCard, putLike, deleteLike,
 } = require('../controllers/cards');
 
-const regExp = /^https?:\/\/(www.)?[a-zA-Z0-9-.]+(\.\w+)+\/[\w-._~:/?#[\]@!$&'()*+,;=]*#*$/;
+const regExp = /^https?:\/\/(www.)?[a-zA-Z0-9-.]+(\.\w+)+[/\w-._~:/?#[\]@!$&'()*+,;=]*#*$/;
 
 router.get('/cards', getCards);
 router.post('/cards', celebrate({

@@ -39,7 +39,7 @@ const putLike = (req, res, next) => Card.findByIdAndUpdate(
 )
   .then((card) => {
     if (!card) next(new NotFoundError('Нет карточки с таким id'));
-    return res.status(200).send(card);
+    else res.status(200).send(card);
   })
   .catch((err) => {
     if (err.name === 'CastError') next(new BadRequestError('Переданы некорректные данные'));
@@ -52,7 +52,7 @@ const deleteLike = (req, res, next) => Card.findByIdAndUpdate(
 )
   .then((card) => {
     if (!card) next(new NotFoundError('Нет карточки с таким id'));
-    return res.status(200).send(card);
+    else res.status(200).send(card);
   })
   .catch((err) => {
     if (err.name === 'CastError') next(new BadRequestError('Переданы некорректные данные'));
