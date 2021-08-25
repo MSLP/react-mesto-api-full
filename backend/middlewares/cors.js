@@ -1,7 +1,7 @@
 const ALLOWED_CORS = [
   'http://mesto.mslp.nomoredomains.club',
   'https://mesto.mslp.nomoredomains.club',
-  'localhost:3000',
+  'localhost:8000',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
