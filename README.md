@@ -1,6 +1,14 @@
 # react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположен в директории `backend/`, а фронтенд - в `frontend/`. 
-  
-Публичный IP - 178.154.200.174
-Ссылка на сайт - https://mesto.mslp.nomoredomains.club
-Бэкенд - https://mesto.mslp.back.nomoredomains.club
+The final version of `MESTO`(`Place`) project series, which includes both backend and frontend parts. This project helped to get experience with backend area and integration between front and server parts of application.
+
+[Project website](https://mesto.mslp.nomoredomains.club)
+
+[Backend site](https://mesto.mslp.back.nomoredomains.club)
+
+## Techologies :
+* React
+* Node.js
+* MongoDB
+* JavaScript
+* CSS
+* HTML
